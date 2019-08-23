@@ -1,0 +1,86 @@
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-6">  
+            <div class="container">
+            <br> <h2>Lender:</h2> <br>
+                <form action="/users" method="post">
+                        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+                    <div class="form-group">
+                        <label for="">First Name:</label>
+                        <input type="text" class="form-control" name="user[first_name]" aria-describedby="helpId" placeholder="Jane">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Last Name:</label>
+                        <input type="text" class="form-control" name="user[last_name]" aria-describedby="helpId" placeholder="Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email:</label>
+                        <input type="email" class="form-control" name="user[email]" id="Email" aria-describedby="emailHelpId" placeholder="Jane@doe.com">
+                    </div>
+                    <div class="password">
+                        <label for="">Password:</label>
+                        <input type="password" class="form-control" name="user[password]" id="Password" placeholder="Password">
+                    </div> <br>
+                    <div class="password_confirmation">
+                        <label for="">Confirm Password:</label>
+                        <input type="password" class="form-control" name="user[password_confirmation]" id="Password_Confirmation" placeholder="Confirm Password">
+                    </div> 
+                    <div class="form-group">
+                        <label for="">Money:</label>
+                        <input type="number" class="form-control" name="user[money]"  aria-describedby="emailHelpId" placeholder="1000">
+                    </div>
+                    <input type="hidden" name="status" value="lender">
+                    <br>
+                    <button type="submit" id="Join" class="btn btn-primary">Register</button>
+                </form>
+                <br>
+            <%= link_to "Already a member?", login_path%>
+            </div>
+        </div>
+        <div class="col-md-6">
+        <br> <h2>Borrower:</h2> <br>
+        <form action="/users/borrower" method="post">
+                <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+            <div class="form-group">
+                <label for="">First Name:</label>
+                <input type="text" class="form-control" name="user[first_name]" aria-describedby="helpId" placeholder="Jane">
+            </div>
+            <div class="form-group">
+                <label for="">Last Name:</label>
+                <input type="text" class="form-control" name="user[last_name]" aria-describedby="helpId" placeholder="Doe">
+            </div>
+            <div class="form-group">
+                <label for="">Email:</label>
+                <input type="email" class="form-control" name="user[email]" id="Email" aria-describedby="emailHelpId" placeholder="Jane@doe.com">
+            </div>
+            <div class="password">
+                <label for="">Password:</label>
+                <input type="password" class="form-control" name="user[password]" id="Password" placeholder="Password">
+            </div> <br>
+            <div class="password_confirmation">
+                <label for="">Confirm Password:</label>
+                <input type="password" class="form-control" name="user[password_confirmation]" id="Password_Confirmation" placeholder="Confirm Password">
+            </div>
+            <input type="hidden" name="status" value="borrower">
+            <div class="form-group">
+                <label for="">Need Money for:</label>
+                <input type="text" class="form-control" name="user[title]"  aria-describedby="emailHelpId" >
+            </div>
+            <div class="form-group">
+                <label for="">Description:</label>
+                <textarea class="form-control" name="user[description]" id="" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Amount Needed:</label>
+                <input type="number" class="form-control" name="user[money]"  aria-describedby="emailHelpId" placeholder="1000">
+            </div>
+            <input type="hidden" name="user[raised]" value="0">
+             <br>
+            <button type="submit" id="Join" class="btn btn-primary">Register</button>
+        </form> <br>
+        <%= link_to "Already a member?", login_path%> <br>
+    </div>
+        </div>
+    </div>
+</div>
+

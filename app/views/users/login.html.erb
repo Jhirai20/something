@@ -1,0 +1,17 @@
+<div class="container">
+<br> <h2>Login:</h2> <br>
+    <form action="/users/login" method="post">
+            <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+            
+        <div class="form-group">
+            <label for="">Email:</label>
+            <input type="email" class="form-control" name="email" id="Email" aria-describedby="emailHelpId" placeholder="Jane@doe.com">
+        </div>
+        <div class="password">
+            <label for="">Password:</label>
+            <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
+        </div> <br>
+        <button type="submit" id="Log In" class="btn btn-primary">Log In</button>
+    </form><br>
+    <%= link_to "Click here to register", register_path%> <br>
+</div>
