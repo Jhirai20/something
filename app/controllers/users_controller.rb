@@ -61,7 +61,7 @@ class UsersController < ApplicationController
   end
   def lend
     @lender=Lender.find(session[:id])
-    if params[:money]<@lender.money
+    if params[:money].to_i<@lender.money.to_i
       @hist=History.new(amount:params[:money], lender:Lender.find(session[:id]), borrower: Borrower.find(params[:id]))
       @hist.save
       @lender.money=@lender.money.to_i-params[:money].to_i
